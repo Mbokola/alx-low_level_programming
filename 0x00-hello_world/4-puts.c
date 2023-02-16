@@ -1,6 +1,11 @@
 #include <stdio.h>
 /**
- *Using puts to print 
+ * main - entry point
+ * void: return void
+(* 
+ * Description: Using puts to print out string
+(* Stdio.h: Import header file
+ * Return: 0 if program succeeds
  */
 int main(void)
 {
