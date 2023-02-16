@@ -4,7 +4,7 @@
  *main - Program entry point
  *void: return zero if succesful
  *Deccription: sizeof types
- *Return 0: 0 if succesful
+ *Return: 0 if succesful
  */
 
 int main(void)
