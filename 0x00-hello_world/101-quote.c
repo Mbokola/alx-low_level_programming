@@ -3,7 +3,7 @@
 /**
  *main - program entry
  *Description: printf string
- *void: null
+ *void: return no value
  *return: 1 if succesful
  */
 int main(void)
