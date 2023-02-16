@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- *main: Entry point
+ *main- Program entry point
  *void: returns 0
  *Description: Use printf on string.
  *Return: 0 if successful.
