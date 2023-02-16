@@ -2,8 +2,8 @@
 
 /**
  *main - program entry
- *Description: printf string
  *void: return no value
+ *Description: printf string
  *return: 1 if succesful
  */
 int main(void)
