@@ -4,7 +4,7 @@
  *main - program entry
  *void: return no value
  *Description: printf string
- *return (1): 1 if succesful
+ *Return: 1 if succesful
  */
 int main(void)
 {
