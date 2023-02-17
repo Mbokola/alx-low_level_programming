@@ -15,7 +15,7 @@ int main(void)
 
 	/* Use for loop to extract digits */
 
-	for (i; i < 10; i++)
+	for (; i < 10; i++)
 		printf("%d\n", i);
 	return (0);
 }
