@@ -6,11 +6,11 @@
  *Return: zero if succcesful
  */
 
-int main()
+int main(void)
 {
 	char i = 'z';
 
-	for(; i >= 'a'; i--)
+	for (; i >= 'a'; i--)
 		putchar(i);
 	putchar('\n');
 	return (0);
