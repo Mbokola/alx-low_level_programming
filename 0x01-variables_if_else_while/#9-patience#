@@ -1,0 +1,24 @@
+#include <stdio.h>
+ 2/**
+ 3 *main - program entry point
+ 4 *void: no parameter
+ 5 *print hexadecimal numbers
+ 6 *Return: zero i succesful
+ 7 */
+ 8
+ 9int main(void)
+10{
+11        char i;
+12        char e;
+13
+14/* Use for loop to extract */
+15
+16        for (i = '0'; i < 10 + '0'; i++)
+17                putchar(i);
+18
+19        for (e = 'a'; e <= 'f'; e++)
+20                putchar(e);
+21
+22        putchar('\n');
+23        return (0);
+24}
