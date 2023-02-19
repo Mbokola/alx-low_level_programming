@@ -1,34 +1,31 @@
 #include <stdio.h>
-
 /**
- * main - program entry
- * void: no parameters
- * Program to print digit pair combo
- * Return: zero if succesful
+ * main - Program entry point
+ * void: no parameter
+ * Return: zero if unsuccesful
  */
-
 int main(void)
 {
-	int a = 0 + '0';
+	int a = 0;
+	int c;
+	int b;
 
-	while (a <= '9')
+	while (a <= 8)
 	{
-		int b = 1 + '0';
-
-		while (b <= '9' && a != b)
+		b = (a + 1) + '0';
+		c = a + '0';
+		a++;
+		while (b <= '9')
 		{
-			putchar(a);
+			putchar(c);
 			putchar(b);
 			b++;
-			if (a != '9' || b != '9')
+			if (a != 9 || b == '8')
 			{
 				putchar(',');
 				putchar(' ');
 			}
 		}
-		a++;
 	}
-
-	putchar('\n');
 	return (0);
 }
