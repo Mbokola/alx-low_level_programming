@@ -14,7 +14,7 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
 
-	long int l;
+	int l;
 	
 	l = n % 10;
 
