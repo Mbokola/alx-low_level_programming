@@ -15,12 +15,12 @@ int main(void)
 	{
 		int b = 1 + '0';
 
-		while (b <= '9')
+		while (b <= '9' && a != b)
 		{
 			putchar(a);
 			putchar(b);
 			b++;
-			if (a != '9' || b != 10 + '0')
+			if (a != '9' || b != '9')
 			{
 				putchar(',');
 				putchar(' ');
