@@ -14,18 +14,18 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	/* your code goes there */
 
-	int l;
+	int lstdig;
 	
-	l = n % 10;
+	lstdig = n % 10;
 
 	if (n < 0)
-		printf("The last digit of %d is %d and is less than 6 and not 0", n, l);
-	else if (l == 0)
+		printf("The last digit of %d is %d and is less than 6 and not 0", n, lstdig);
+	else if (lstdig == 0)
 		printf("The last digit of %d is 0 and is 0", n);
-	else if (l < 6)
-		printf("The last digit of %d is %d and is less than 6 and not 0", n, l);
+	else if (lstdig < 6)
+		printf("The last digit of %d is %d and is less than 6 and not 0", n, lstdig);
 	else
-		printf("The last digit of %d is %d and is greater than 5", n, l);
+		printf("The last digit of %d is %d and is greater than 5", n, lstdig);
 
 	return (0);
 }
