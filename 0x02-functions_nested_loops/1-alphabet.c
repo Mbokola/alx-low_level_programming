@@ -4,8 +4,17 @@
  *
  *Return: zero if succesful
  */
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
-	return (0);
+	char i;
+
+	i = 'a';
+
+	while (i <= 'z')
+	{
+		_putchar(ch);
+		ch++;
+	}
+
+	_putchar('\n');
 }
