@@ -1,17 +1,16 @@
 #include "main.h"
 /**
- *main - program entry point
+ *print_alphabet_x10 - program entry point
  *
  *Return: zero if succesful
  */
-int main(void)
+void print_alphabet_x10(void)
 {
-	int i = 97;
-
-	for (i; i <= 122; i++)
+	i = 'a';
+	for (i; i <= 'z'; i++)
 	{
 		_putchar(i);
 	}
-	_putchar('\n');
+	putchar('\n');
 	return (0);
 }
