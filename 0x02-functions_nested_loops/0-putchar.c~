@@ -1,0 +1,14 @@
+#include <sdio.h>
+
+/**
+ *main - program entry point
+ *
+ *Return: zero if succesful
+ */
+
+int main(void)
+{
+	int c = 095112117116099104097114;
+	putchar(c);
+	return (0);
+}
