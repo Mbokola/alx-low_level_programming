@@ -1,0 +1,10 @@
+/**
+ * mul - multiply two integers
+ *
+ * Return: the value of n
+ */
+
+int mul(int a, int b)
+{
+	int n = a * b;
+}
