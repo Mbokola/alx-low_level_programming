@@ -11,10 +11,9 @@ int main(void)
         int a, b, c;
         int largest;
 
-        a = -98;
-
-        b = 972;
-        c = 0;
+        a = 972;
+        b = 0;
+        c = -98;
 
         largest = largest_number(a, b, c);
 
