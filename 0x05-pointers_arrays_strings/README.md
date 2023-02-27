@@ -1,5 +1,7 @@
 0x05. C - Pointers, arrays and strings
 
-Task 0: 0. 98 Battery st.
-Task 1: 1. Don't swap horses in crossing a stream
-Task 2: 2. This report, by its very length, defends itself against the risk of being read
+Task 0: Reset value to 98
+Task 1: Swap two numbers
+Task 2: Find Length of string
+Task 3: Print a string
+Task 4: Reverse a string
