@@ -6,3 +6,4 @@ Task 2: Find Length of string
 Task 3: Print a string
 Task 4: Print a string in reverse
 Task 5: Reverse a string
+Task 6: Print every other character from the first character
