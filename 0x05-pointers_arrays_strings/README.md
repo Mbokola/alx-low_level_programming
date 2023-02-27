@@ -7,3 +7,4 @@ Task 3: Print a string
 Task 4: Print a string in reverse
 Task 5: Reverse a string
 Task 6: Print every other character from the first character
+Task 7: Print 2nd half of characters
