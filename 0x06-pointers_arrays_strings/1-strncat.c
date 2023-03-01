@@ -11,7 +11,7 @@ char *_strncat(char *dest, char *src, int n)
 {
 	int i;
 	int j;
-	int bits = (n * 8) - 2;
+	int bits = n * 6;
 
 	for (i = 0; dest[i] != '\0'; i++)
 	{
@@ -23,7 +23,7 @@ char *_strncat(char *dest, char *src, int n)
 	dest[i] = '\0';
 	for (j = 0; dest[j] != '\0'; j++)
 	{
-		if (j == bits)
+		if (j >= bits)
 		{
 			dest[j + 1] = '\0';
 		}
