@@ -13,14 +13,17 @@ int _strcmp(char *s1, char *s2)
 	int i = 0;
 	int a, b, c;
 
-	for (i; s1[i] || s2[i]; i++)
+	while (s1[i] || s2[i])
 	{
 		a = s1[i];
 		b = s2[i];
 		c = a - b;
 		if (c == 0)
+		{
+			i++;
 			continue;
-		else if (a == 0 && b > 0 || a > 0 && b == 0)
+		}
+		else if ((a == 0 && b > 0) || (a > 0 && b == 0))
 		{
 			c = 1;
 			break;
