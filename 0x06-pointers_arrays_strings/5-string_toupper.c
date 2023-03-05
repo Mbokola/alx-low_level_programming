@@ -9,6 +9,7 @@ char *string_toupper(char *n)
 {
 	int i;
 	int j;
+
 	for (i = 0; n[i] != '\0'; i++)
 	{
 		j = n[i];
