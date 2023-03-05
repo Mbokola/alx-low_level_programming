@@ -12,7 +12,7 @@ char *string_toupper(char *n)
 	for (i = 0; n[i] != '\0'; i++)
 	{
 		j = n[i];
-		if (j > 90)
+		if (j > 90 && j < 123)
 			j = j - 32;
 		n[i] = j;
 	}
