@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *_strchr - finds any similar character
+ *_strpbrk - finds any similar character
  *@s: pointer to pointer f
  *@accept: string to be used
  *Return: s + i if found NULL if not
