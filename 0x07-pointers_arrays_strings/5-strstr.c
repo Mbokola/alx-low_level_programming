@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  *_strstr - finds substring
  *@haystack: pointer to s
