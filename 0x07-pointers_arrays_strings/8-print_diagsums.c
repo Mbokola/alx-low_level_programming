@@ -1,7 +1,10 @@
+#include <stdio.h>
 #include "main.h"
+
 /**
- * print_chessboard - Entry point
- * @a: array
+ * print_diagsums - Entry point
+ * @a: input
+ * @size: input
  * Return: Always 0 (Success)
  */
 void print_diagsums(int *a, int size)
