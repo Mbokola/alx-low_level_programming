@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  *_strchr - Locate char c in @s
  *@s: pointer to pointer f
@@ -14,5 +15,5 @@ char *_strchr(char *s, char c)
 		if (s[i] == c)
 			return (s + i);
 	}
-	return ('\0');
+	return (NULL);
 }
