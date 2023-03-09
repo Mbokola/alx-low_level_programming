@@ -1,7 +1,7 @@
 /**
  *checker - function to check for prime number
  *@i: number for check
- *@j; decrement
+ *@j: iterator
  *Return: 1 if prime 0 if not
  */
 int checker(int i, int j)
@@ -13,12 +13,12 @@ int checker(int i, int j)
 	return (checker(i, j - 1));
 }
 /**
- *is_prime_nember - function to check for prime number
+ *is_prime_number - function to check for prime number
  *@n: number for check
  *Return: 1 if prime 0 if not
  */
 
 int is_prime_number(int n)
 {
-	return (checker(n,9));
+	return (checker(n, 9));
 }
