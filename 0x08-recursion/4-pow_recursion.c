@@ -1,8 +1,9 @@
 #include "main.h"
 /**
- *_sqrt_recursion - gets square root of @n
- *@n: parameter
- *Return: square root of n or -1 if none
+ * _pow_recursion - calculate power raised to @y
+ * @x: input one
+ * @y: input two
+ * Return: power
  */
 int _pow_recursion(int x, int y)
 {
