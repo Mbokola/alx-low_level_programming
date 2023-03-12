@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	int change[5] = {25, 10, 5, 2, 1};
 	int a, b, i, c = 0;
 
-	if (argc == 2 && atoi(argv[1]) >= 0)
+	if (argc == 2)
 	{
 		if (atoi(argv[1]) < 0)
 			printf("%d\n", c);
