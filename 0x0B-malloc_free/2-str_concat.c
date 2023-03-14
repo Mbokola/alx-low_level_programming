@@ -22,17 +22,12 @@ char *str_concat(char *s1, char *s2)
 	s = malloc(sizeof(char) * len);
 	if (s == 0)
 		return (0);
-	for (i = 0; s1[i] || a; i++)
+	for (i -= 1; s1[i] || a;)
 	{
-		if (s1[i])
+		if (i-- >= 0)
 			s[i] = s1[i];
-		else
-			i--;
 		if (a)
-		{
-			s[--len] = s2[a - 1];
-			a--;
-		}
+			s[--len] = s2[--a];
 	}
 	return (s);
 }
