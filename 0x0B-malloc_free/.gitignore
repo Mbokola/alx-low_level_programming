@@ -6,4 +6,5 @@ test.c
 _putchar.c
 *.o
 .#*
-#*#
+#*
+'*
