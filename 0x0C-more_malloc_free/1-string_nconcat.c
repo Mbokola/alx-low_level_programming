@@ -20,8 +20,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		;
 	while (*(s2 + len2++))
 		;
-	if (len == len2)
-		n = len - 1;
+	if (n >= len2)
+		n = len2 - 1;
 	s = malloc(sizeof(char) + len + n - 1);
 
 	a = s1;
