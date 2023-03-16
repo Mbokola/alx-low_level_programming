@@ -1,12 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-/**
- * *string_nconcat - concactecate two strings
- *@s1: First string
- *@s2: Second string
- *@n: Chars from s2
- *Return: pointer to allocated memory with new string
- */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *s, *a, *b;
@@ -23,6 +16,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n >= len2)
 		n = len2 - 1;
 	s = malloc(sizeof(char) + len + n - 1);
+	if (!s)
+		return (0);
 
 	a = s1;
 	b = s;
