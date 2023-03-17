@@ -14,7 +14,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (!s || !size || !nmemb)
 		return (0);
 	i = s;
-	while (i != s + nmemb)
+	while (i <= s + (nmemb - 1))
 		*i++ = 0;
 	return (s);
 }
