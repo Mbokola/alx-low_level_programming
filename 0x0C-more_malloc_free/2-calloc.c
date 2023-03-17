@@ -12,9 +12,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	s = malloc(size * nmemb);
 	if (!s || !size || !nmemb)
-		return (0);
+		return (NULL);
 	i = s;
-	while (i <= s + (nmemb - 1))
+	while (i != s + nmemb)
 		*i++ = 0;
 	return (s);
 }
