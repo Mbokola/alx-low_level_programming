@@ -1,10 +1,5 @@
-*~
-'#*
-main.h.gch
-a.out
+*
+!*.c
+!*.a
+!*.h
 test.c
-_putchar.c
-*.o
-.#*
-#*
-'*
