@@ -16,7 +16,7 @@ int main(void)
 			{
 				for (b = j; b <= 9; b++)
 				{
-					if (j == b && i != 0)
+					if (j == b || i != 0)
 						b += 1;
 					if (i || j || a || b)
 					{
