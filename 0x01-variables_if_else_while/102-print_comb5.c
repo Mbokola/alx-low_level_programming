@@ -18,6 +18,8 @@ int main(void)
 				{
 					if (j == b && i != 0)
 						b += 1;
+					if (i || j || a || b)
+					{
 					putchar(i + '0');
 					putchar(j + '0');
 					putchar(' ');
@@ -27,6 +29,7 @@ int main(void)
 					{
 						putchar(',');
 						putchar(' ');
+					}
 					}
 				}
 			}
