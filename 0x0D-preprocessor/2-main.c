@@ -1,3 +1,4 @@
+#include <stdio.h>
 /**
  *main - program entry point
  *@void: no arguments
