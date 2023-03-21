@@ -1,0 +1,8 @@
+*
+!*.md
+!*.c
+!*.a
+!*.h
+!.gitignore
+test.c
+_putchar.c
