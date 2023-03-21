@@ -14,27 +14,23 @@ int main(void)
 		{
 			for (a = i; a <= 9; a++)
 			{
-				for (b = j; b <= 9; b++)
+				for (b = j + 1; b <= 9 ; b++)
 				{
-					if (j == b && j != 0)
-						b += 1;
-					if (i || j || a || b)
+					if (i-j == 0 && a -b == 0 )
 					{
+						b = j + 1;
+						b++;
+					}
 					putchar(i + '0');
 					putchar(j + '0');
 					putchar(' ');
 					putchar(a + '0');
 					putchar(b + '0');
-					if (!(i - j == 1) || (a - b))
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					}
+					putchar(',');
+					putchar(' ');
 				}
 			}
 		}
 	}
-	putchar('\n');
 	return (0);
 }
