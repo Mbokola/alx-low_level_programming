@@ -1,5 +1,6 @@
 #ifndef _struct
 #define _struct
+void init_dog(struct dog *d, char *name, float age, char *owner);
 /**
  *struct dog - dog structure
  *@name: name of dog
