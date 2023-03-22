@@ -4,5 +4,5 @@
 !*.a
 !*.h
 !.gitignore
-test.c
+test*
 _putchar.c
