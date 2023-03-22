@@ -5,3 +5,4 @@ Task 1: Write a function that executes a function given as a parameter on each e
 Task 2: Write a function that searches for an integer.  
 Task 3: Write a program that performs simple operations.
 
+
