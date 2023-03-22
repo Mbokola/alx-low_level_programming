@@ -1,4 +1,4 @@
-#include "function_pointer.h"
+#include "function_pointers.h"
 /**
  *int_index - checks index of first value @cmp does not return 0
  *@array: array values to be checked
