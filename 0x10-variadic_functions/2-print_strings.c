@@ -17,20 +17,22 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	va_start(args, n);
 	i = n;
-
-	while (i)
+	if (n)
 	{
-		x = va_arg(args, char *);
-		if (!(*x))
-			printf("%s", "(nil)");
-		if (separator && i)
+		while (i)
 		{
-			printf("%s", x);
-			if (i != 1)
-				printf("%s", separator);
+			x = va_arg(args, char *);
+			if (!(*x))
+				printf("%s", "(nil)");
+			if (separator && i)
+			{
+				printf("%s", x);
+				if (i != 1)
+					printf("%s", separator);
+			}
+			i--;
 		}
-		i--;
+		printf("\n");
+		va_end(args);
 	}
-	printf("\n");
-	va_end(args);
 }
