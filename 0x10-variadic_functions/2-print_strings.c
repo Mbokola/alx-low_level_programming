@@ -32,7 +32,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			}
 			i--;
 		}
-		printf("\n");
 		va_end(args);
 	}
+	printf("\n");
 }
