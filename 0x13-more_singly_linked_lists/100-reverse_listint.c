@@ -6,7 +6,6 @@
  *
  *Return: pointer to reversed list
  */
-
 listint_t *reverse_listint(listint_t **head)
 {
 	listint_t *save_link = *head, *tmp = *head;
@@ -21,17 +20,23 @@ listint_t *reverse_listint(listint_t **head)
 	{
 		while ((*head)->next)
 		{
-			while (tmp->next->next)
-			{
-				tmp = tmp->next;
-				if (save_link->next == tmp)
-					save_link = save_link->next;
-			}
-			tmp->next->next = tmp;
-			if (save_link == tmp)
+			tmp = tmp->next;
+			if (save_link->next == tmp)
 				save_link = save_link->next;
-			tmp->next = NULL;
-			tmp = *head;
+			if (!tmp->next)
+			{
+				tmp->next = *head;
+				(*head)->next = NULL;
+				break;
+			}
+			if (!(tmp->next->next))
+			{
+				tmp->next->next = tmp;
+				if (save_link == tmp)
+					save_link = save_link->next;
+				tmp->next = NULL;
+				tmp = *head;
+			}
 		}
 		*head = save_link;
 	}
