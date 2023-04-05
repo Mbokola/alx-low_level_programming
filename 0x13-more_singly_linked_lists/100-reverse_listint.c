@@ -18,27 +18,15 @@ listint_t *reverse_listint(listint_t **head)
 	}
 	else
 	{
-		while ((*head)->next)
+		save_link = tmp->next;
+		tmp->next = NULL;
+		while (save_link)
 		{
-			tmp = tmp->next;
-			if (save_link->next == tmp)
-				save_link = save_link->next;
-			if (!tmp->next)
-			{
-				tmp->next = *head;
-				(*head)->next = NULL;
-				break;
-			}
-			if (!(tmp->next->next))
-			{
-				tmp->next->next = tmp;
-				if (save_link == tmp)
-					save_link = save_link->next;
-				tmp->next = NULL;
-				tmp = *head;
-			}
+			tmp = save_link;
+			save_link = save_link->next;
+			tmp->next = *head;
+			*head = tmp;
 		}
-		*head = save_link;
 	}
 	return (*head);
 }
