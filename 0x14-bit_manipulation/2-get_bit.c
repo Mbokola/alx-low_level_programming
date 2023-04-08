@@ -4,17 +4,22 @@
  *@n: number to be used
  *@index: location of binary digit
  *
- *return: value at index
+ *Return: value at index
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int j;
+	unsigned int j, count;
 
-	j = n >> index;
+	for (count = 0; n >> count >= 1; count++)
+		;
+	if (index <= count)
+	{
+		j = n >> index;
 
-	if (j & 1)
-		return (1);
-	else
-		return (0);
+		if (j & 1)
+			return (1);
+		else
+			return (0);
+	}
 	return (-1);
 }
