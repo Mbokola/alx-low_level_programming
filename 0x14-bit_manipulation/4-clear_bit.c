@@ -1,5 +1,5 @@
 /**
- *set_bit - sets bit @index to 1
+ *clear_bit - sets bit @index to 1
  *@n: pointer to number
  *@index: index to set bit
  *
@@ -12,7 +12,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	if (sizeof(unsigned long int) * 8 > index)
 	{
 		j = 1 << index;
-		if (*n)
+		if (*n >> index)
 			*n ^= j;
 		else
 			*n &= j;
