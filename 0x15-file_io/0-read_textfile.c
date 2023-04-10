@@ -22,15 +22,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		if (count == letters)
 			break;
-		if (store == -1)
-			return (0);
-		if (store < 0)
-			break;
 		store = write(STDOUT_FILENO, &c, sizeof(c));
-		if (store == -1)
-			return (4);
-		if (store == 0)
-			break;
 		count++;
 	}
 	close(fd);
