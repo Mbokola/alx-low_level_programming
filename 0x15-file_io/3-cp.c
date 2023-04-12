@@ -30,7 +30,7 @@ int main(int ac, char **av)
 		exit(99);
 	}
 	while ((read_in = read(fd, buffer, 1024)) > 0)
-		write(fd1, buffer, 1024);
+		write(fd1, buffer, read_in);
 	close(fd);
 	close(fd1);
 	free(buffer);
