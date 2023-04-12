@@ -23,20 +23,14 @@ int main(int ac, char **av)
 		dprintf(2, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
-	fd1 = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	fd1 = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd1 == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
 	while ((read_in = read(fd, buffer, 1024)) > 0)
-	{
-		if (write(fd1, buffer, read_in) < 0)
-		{
-			dprintf(2, "Error: Can't write to %s\n", av[2]);
-			exit (99);
-		}
-	}
+		write(fd1, buffer, read_in);
 	close(fd);
 	close(fd1);
 	free(buffer);
