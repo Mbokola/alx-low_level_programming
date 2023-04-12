@@ -30,7 +30,13 @@ int main(int ac, char **av)
 		exit(99);
 	}
 	while ((read_in = read(fd, buffer, 1024)) > 0)
-		write(fd1, buffer, read_in);
+	{
+		if (write(fd1, buffer, read_in) < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			exit(99);
+		}
+	}
 	if (close(fd) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
@@ -38,8 +44,8 @@ int main(int ac, char **av)
 	}
 	if (close(fd1) < 0)
 	{
-	        dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
-	        exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
+		exit(100);
 	}
 	return (0);
 }
