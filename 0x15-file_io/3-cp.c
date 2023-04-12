@@ -34,7 +34,7 @@ int main(int ac, char **av)
 	if (close(fd) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd");
-		return (100);
+		exit(100);
 	}
 	free(buffer);
 	return (0);
