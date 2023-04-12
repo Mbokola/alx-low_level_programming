@@ -36,6 +36,10 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Error: Can't close fd");
 		exit(100);
 	}
-	free(buffer);
+	if (close(fd1) < 0)
+	{
+	        dprintf(STDERR_FILENO, "Error: Can't close fd");
+	        exit(100);
+	}
 	return (0);
 }
