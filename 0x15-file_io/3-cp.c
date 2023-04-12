@@ -30,7 +30,13 @@ int main(int ac, char **av)
 		exit(99);
 	}
 	while ((read_in = read(fd, buffer, 1024)) > 0)
-		write(fd1, buffer, read_in);
+	{
+		if (write(fd1, buffer, read_in) < 0)
+		{
+			dprintf(2, "Error: Can't write to %s\n", av[2]);
+			exit (99);
+		}
+	}
 	close(fd);
 	close(fd1);
 	free(buffer);
