@@ -37,6 +37,11 @@ int main(int ac, char **av)
 			exit(99);
 		}
 	}
+	if (read_in < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
 	if (close(fd) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
