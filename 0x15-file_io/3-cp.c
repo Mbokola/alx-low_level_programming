@@ -43,10 +43,14 @@ int main(int ac, char **av)
 		exit(98);
 	}
 	if (close(fd) < 0)
+	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
-	if (close(fd1) < 0)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd1);
-	if (fd < 0 || fd1 < 0)
 		exit(100);
+	}
+	if (close(fd1) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd1);
+		exit(100);
+	}
 	return (0);
 }
