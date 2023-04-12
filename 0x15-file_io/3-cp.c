@@ -33,12 +33,12 @@ int main(int ac, char **av)
 		write(fd1, buffer, read_in);
 	if (close(fd) < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
 		exit(100);
 	}
 	if (close(fd1) < 0)
 	{
-	        dprintf(STDERR_FILENO, "Error: Can't close fd");
+	        dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd);
 	        exit(100);
 	}
 	return (0);
