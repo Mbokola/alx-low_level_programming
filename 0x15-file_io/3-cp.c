@@ -31,6 +31,8 @@ int main(int ac, char **av)
 	}
 	while ((read_in = read(fd, buffer, 1024)) > 0)
 		write(fd1, buffer, read_in);
+	if (read_in < 0)
+		exit(98);
 	if (close(fd) < 0 || close(fd1) < 0)
 		return (100);
 	free(buffer);
