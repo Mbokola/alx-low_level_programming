@@ -31,7 +31,7 @@ int main(int ac, char **av)
 	}
 	while ((read_in = read(fd, buffer, 1024)) > 0)
 		write(fd1, buffer, read_in);
-	if (close(fd) < 0 || close(fd1) < 0)
+	if (close(fd) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd");
 		return (100);
