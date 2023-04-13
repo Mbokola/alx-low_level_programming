@@ -17,5 +17,5 @@ void print_version(unsigned char *p);
 void print_os(unsigned char *p);
 void print_abi(unsigned char *p);
 void print_type(Elf64_Ehdr *buffer);
-void print_entry(void);
+void print_entry(Elf64_Ehdr *buffer, unsigned char *p);
 #endif
