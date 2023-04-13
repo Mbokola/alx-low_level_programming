@@ -31,7 +31,7 @@ int main(int ac, char **av)
 		print_os(p);
 		print_abi(p);
 		print_type(buffer);
-		print_entry();
+		print_entry(buffer, p);
 		close(fd);
 		free(buffer);
 	}
@@ -50,7 +50,7 @@ void printer(int count)
 {
 	char *sec[] = {"  Class:			     ",
 		       "  Data:				     ",
-		       "  Version:			     ",
+		       "  Version:			     1",
 		       "  OS/ABI:			     ",
 		       "  ABI Version:			     ",
 		       "  Type:				     ",
@@ -255,8 +255,21 @@ void print_type(Elf64_Ehdr *buffer)
  *
  *Return: Nothing
  */
-void print_entry(void)
+void print_entry(Elf64_Ehdr *buffer, unsigned char *p)
 {
+	long int i = buffer->e_entry;
+
 	printer(6);
-	printf("0xac0\n");
+	if (p[EI_DATA] == ELFDATA2MSB)
+	{
+		i = ((i << 8) & 0xFF00FF00) |
+			  ((i >> 8) & 0xFF00FF);
+		i = (i << 16) | (i >> 16);
+	}
+
+	if (p[EI_CLASS] == ELFCLASS32)
+		printf("%#x\n", (unsigned int)i);
+
+	else
+		printf("%#lx\n", i);
 }
