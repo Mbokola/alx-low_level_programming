@@ -50,7 +50,7 @@ void printer(int count)
 {
 	char *sec[] = {"  Class:			     ",
 		       "  Data:				     ",
-		       "  Version:			     1",
+		       "  Version:			     ",
 		       "  OS/ABI:			     ",
 		       "  ABI Version:			     ",
 		       "  Type:				     ",
@@ -154,7 +154,7 @@ void print_version(unsigned char *p)
 	switch (p[EI_VERSION])
 	{
 	case EV_CURRENT:
-		printf(" (current)\n");
+		printf("%d (current)\n", p[EI_VERSION]);
 		break;
 	default:
 		printf("\n");
@@ -252,6 +252,8 @@ void print_type(Elf64_Ehdr *buffer)
 
 /**
  *print_entry - prints entry address
+ *@buffer: pointer to buffer
+ *@p: pointer to e_ident
  *
  *Return: Nothing
  */
