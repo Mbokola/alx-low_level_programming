@@ -48,13 +48,13 @@ int main(int ac, char **av)
  */
 void printer(int count)
 {
-	char *sec[] = {"  Class:			     ",
-		       "  Data:				     ",
-		       "  Version:			     ",
-		       "  OS/ABI:			     ",
-		       "  ABI Version:			     ",
-		       "  Type:				     ",
-		       "  Entry point address:		     "};
+	char *sec[] = {"  Class:                             ",
+		       "  Data:                              ",
+		       "  Version:                           ",
+		       "  OS/ABI:                            ",
+		       "  ABI Version:                       ",
+		       "  Type:                              ",
+		       "  Entry point address:               "};
 	printf("%s", sec[count]);
 }
 
