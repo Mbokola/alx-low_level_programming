@@ -11,6 +11,11 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	/* create new_node */
 	dlistint_t *current, *new_node = malloc(sizeof(dlistint_t));
 
+	if (!new_node)
+	{
+		dprintf(2, "Error allocating memory");
+		exit(EXIT_FAILURE);
+	}
 	new_node->n = n;
 	/* set new_node, prev node to null */
 	new_node->prev = NULL;
@@ -22,8 +27,8 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	}
 	/* Check we are at beginning of list */
 	current = *head;
-	/*	while (current->prev)
-		current = current->prev; */
+	while (current->prev)
+		current = current->prev;
 	/* set new_node, next node to head */
 	new_node->next = current;
 	/* set head node, prev node to new_node */
