@@ -29,8 +29,7 @@ size_t print_dlistint(const dlistint_t *h)
 
 int main(void)
 {
-    dlistint_t *head;
-    dlistint_t *node;
+	dlistint_t *head, *ptr;
 
     head = NULL;
     add_dnodeint_end(&head, 0);
@@ -42,10 +41,18 @@ int main(void)
     add_dnodeint_end(&head, 402);
     add_dnodeint_end(&head, 1024);
     print_dlistint(head);
-    node = get_dnodeint_at_index(head, 14);
-    if (!node)
-	    printf("Iza buda\n");
-    printf("%d\n", node->n);
+    printf("-----------------\n");
+    insert_dnodeint_at_index(&head, 8, 4096);
+    print_dlistint(head);
+    ptr = head;
+    while (ptr->next)
+	    ptr = ptr->next;
+    printf("-----------------\n");
+    while (ptr->prev)
+    {
+	    printf("%d\n", ptr->n);
+	    ptr = ptr->prev;
+    }
     free_dlistint(head);
     head = NULL;
     return (EXIT_SUCCESS);
