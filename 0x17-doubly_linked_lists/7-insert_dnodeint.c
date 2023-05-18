@@ -1,7 +1,9 @@
 #include "lists.h"
 /**
  *insert_dnodeint_at_index - insert node @idx
- *@head: pointer to list
+ *@h: pointer to list
+ *@idx: position to insert
+ *@n: data value
  *
  *Return: sum
  */
@@ -11,18 +13,12 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new_node = malloc(sizeof(dlistint_t));
 	int index = (int)idx;
 	/* Error check malloc */
-	if (!new_node)
+	if (!new_node || !*h)
 		return (NULL);
 	/* Create the new_node and initialize  */
 	new_node->n = n;
 	new_node->next = NULL;
 	new_node->prev = NULL;
-	/* check if list is empty */
-	if (!*h)
-	{
-		*h = new_node;
-		return (*h);
-	}
 	/* if index - 1 < 0 add begining */
 	index -= 1;
 	if (index < 0)
