@@ -27,12 +27,6 @@ size_t print_dlistint(const dlistint_t *h)
         return (count);
 }
 
-
-/**
- * main - check the code
- *
- * Return: Always EXIT_SUCCESS.
- */
 int main(void)
 {
     dlistint_t *head;
@@ -47,5 +41,7 @@ int main(void)
     add_dnodeint_end(&head, 402);
     add_dnodeint_end(&head, 1024);
     print_dlistint(head);
+    free_dlistint(head);
+    head = NULL;
     return (EXIT_SUCCESS);
 }
