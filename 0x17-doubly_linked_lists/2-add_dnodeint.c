@@ -22,8 +22,8 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	}
 	/* Check we are at beginning of list */
 	current = *head;
-	while (current->prev)
-		current = current->prev;
+	/*	while (current->prev)
+		current = current->prev; */
 	/* set new_node, next node to head */
 	new_node->next = current;
 	/* set head node, prev node to new_node */
