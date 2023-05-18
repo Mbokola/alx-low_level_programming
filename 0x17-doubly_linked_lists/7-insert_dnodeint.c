@@ -5,7 +5,7 @@
  *@idx: position to insert
  *@n: data value
  *
- *Return: sum
+ *Return: new_list
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -13,12 +13,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new_node = malloc(sizeof(dlistint_t));
 	int index = (int)idx;
 	/* Error check malloc */
-	if (!new_node || !*h)
+	if (!new_node)
 		return (NULL);
 	/* Create the new_node and initialize  */
 	new_node->n = n;
 	new_node->next = NULL;
 	new_node->prev = NULL;
+	if (!*h)
+		return (new_node);
 	/* if index - 1 < 0 add begining */
 	index -= 1;
 	if (index < 0)
