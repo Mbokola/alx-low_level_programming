@@ -10,7 +10,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	/* create new_node */
 	dlistint_t *current, *new_node = malloc(sizeof(dlistint_t));
-
+	/* Error check malloc */
 	if (!new_node)
 	{
 		dprintf(2, "Error allocating memory");
@@ -22,6 +22,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	/* check if list is empty */
 	if (!*head)
 	{
+		new_node->next = NULL;
 		*head = new_node;
 		return (*head);
 	}
