@@ -13,7 +13,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new_node = malloc(sizeof(dlistint_t));
 	int index = (int)idx;
 	/* Error check malloc */
-	if (!new_node)
+	if (!new_node || !*h)
 		return (NULL);
 	/* Create the new_node and initialize  */
 	new_node->n = n;
@@ -32,7 +32,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		current = current->next;
 		index--;
 		if (!current)
+		{
+			free(new_node);
 			return (NULL);
+		}
 	}
 
 	/* Set new_node->next to current->next */
