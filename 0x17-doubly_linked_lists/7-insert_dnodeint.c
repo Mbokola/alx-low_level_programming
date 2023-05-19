@@ -32,6 +32,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		current = current->next;
 		idx--;
+		/* Check if index is out of range */
 		if (!current)
 			return (NULL);
 	}
@@ -39,6 +40,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node->prev = current;
 	new_node->next = current->next;
 	current->next = new_node;
+	/* check if at last node */
 	if (new_node->next)
 		new_node->next->prev = new_node;
 	/* Return List */
