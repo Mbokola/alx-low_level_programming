@@ -33,12 +33,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		current = current->next;
 		idx--;
 		if (!current)
+		{
+			puts("Was here\n");
 			return (NULL);
+		}
 	}
 	/* Insert node */
 	new_node->prev = current;
 	new_node->next = current->next;
 	current->next = new_node;
 	/* Return List */
-	return (*h);
+	return (new_node);
 }

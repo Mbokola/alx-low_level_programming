@@ -19,7 +19,7 @@ size_t print_dlistint(const dlistint_t *h)
 	while (current)
 	{
 		count += 1;
-		printf("%d\n", current->n);
+		printf("HEEEEEEEEEEEEEEEE %d\n", current->n);
 		if (!current->next)
 			break;
 		current = current->next;
