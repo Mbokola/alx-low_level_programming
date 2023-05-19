@@ -12,7 +12,10 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	dlistint_t *new_node, *current = *h;
 	/* Check if inserting at beggining */
 	if (!idx)
-		return (add_dnodeint(&*h, n));
+	{
+		add_dnodeint(&*h, n);
+		return (*h);
+	}
 	/* Create nee_node */
 	new_node = malloc(sizeof(dlistint_t));
 	/* Error check malloc and initialize node*/
@@ -29,6 +32,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{
 		current = current->next;
 		idx--;
+		if (!current)
 			return (NULL);
 	}
 	/* Insert node */
