@@ -9,43 +9,36 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *current = *h;
-	dlistint_t *new_node = malloc(sizeof(dlistint_t));
-	int index = (int)idx;
-	/* Error check malloc */
-	if (!new_node || !*h)
+	dlistint_t *new_node, *current = *h;
+	/* Check if inserting at beggining */
+	if (!idx)
+	{
+		add_dnodeint(&*h, n);
+		return (*h);
+	}
+	/* Create nee_node */
+	new_node = malloc(sizeof(dlistint_t));
+	/* Error check malloc and initialize node*/
+	if (!new_node)
 		return (NULL);
-	/* Create the new_node and initialize  */
 	new_node->n = n;
 	new_node->next = NULL;
 	new_node->prev = NULL;
-	/* if index - 1 < 0 add begining */
-	index -= 1;
-	if (index < 0)
-	{
-		add_dnodeint(&(*h), n);
-		return (*h);
-	}
-	/* Traverse list to index - 1 */
-	while (index)
+	/*Check for empty list */
+	if (!*h)
+		return (new_node);
+	/* Traverse to node idx - 1 */
+	while (idx - 1)
 	{
 		current = current->next;
-		index--;
+		idx--;
 		if (!current)
 			return (NULL);
 	}
-
-	/* Set new_node->next to current->next */
-	new_node->next = current->next;
-	/* set new_node->prev to current */
+	/* Insert node */
 	new_node->prev = current;
-	/* set current->next to new_node */
+	new_node->next = current->next;
 	current->next = new_node;
-	/* Move current to new_node->next */
-	current = new_node->next;
-	/* set current->prev to new_node */
-	if (current)
-		current->prev = new_node;
-	/* Return Modified list */
+	/* Return List */
 	return (*h);
 }
