@@ -65,22 +65,39 @@ void _free_dlistint(dlistint_t *list)
  */
 int main(void)
 {
-    dlistint_t *head;
+	dlistint_t *head;
+	dlistint_t *node;
+	size_t n;
 
-    head = NULL;
-    add_dnodeint_end(&head, 0);
-    add_dnodeint_end(&head, 1);
-    add_dnodeint_end(&head, 2);
-    add_dnodeint_end(&head, 3);
-    add_dnodeint_end(&head, 4);
-    add_dnodeint_end(&head, 98);
-    add_dnodeint_end(&head, 402);
-    add_dnodeint_end(&head, 1024);
-    print_dlistint(head);
-    printf("-----------------\n");
-    insert_dnodeint_at_index(&head, 5, 4096);
-    print_dlistint(head);
-    _free_dlistint(head);
-    head = NULL;
-    return (EXIT_SUCCESS);
+	head = _create_dlist(2, -12, 6);
+	node = insert_dnodeint_at_index(&head, 1, 98);
+	if (node)
+		printf("-> %d\n", node->n);
+	else
+		printf("(nil)\n");
+	n = print_dlistint(head);
+	printf("-> %lu elements\n", n);
+	n = _print_dlistint_backward(head);
+	printf("-> %lu elements\n", n);
+	_free_dlistint(head);
+	return (0);
+}
+
+size_t _print_dlistint_backward(const dlistint_t *h) {
+    const dlistint_t *current = h;
+    size_t count = 0;
+
+    while (current && current->next) {
+        current = current->next;
+    }
+
+    while (current) {
+        printf("%d ", current->n);
+        current = current->prev;
+        count++;
+    }
+
+    printf("\n");
+
+    return count;
 }
