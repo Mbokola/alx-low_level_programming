@@ -40,10 +40,12 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	 */
 	current->prev->next = current->next;
 	/*
+	 * If current->next is true
 	 * Set prev node of node after/next current node to
 	 * node before/prev current node
 	 */
-	current->next->prev = current->prev;
+	if (current->next)
+		current->next->prev = current->prev;
 	/* Free current node */
 	free(current);
 	/* Return 1 */
