@@ -2,7 +2,7 @@
 int main(void)
 {
 	int mul, i = 999;
-	int store = 0, palind = 0, tmp = 0;
+	int largest = 0, store = 0, palind = 0, tmp = 0, store1 = 0, store2 = 0;
 
 	while (i != 100)
 	{
@@ -18,15 +18,20 @@ int main(void)
 			}
 			if (palind == mul)
 			{
-				printf("The largest palindrome made from the product of two 3-digit numbers \
-is %d = %d × %d\n", mul, tmp, i);
-				return (0);
+				if (palind > largest)
+				{
+					largest = palind;
+					store1 = tmp;
+					store2 = i;
+				}
+
 			}
 			palind = 0;
 			tmp--;
-		}
+		  }
 		i--;
 	}
-	printf("No number forms a palindrome\n");
+	printf("The largest palindrome made from the product of two 3-digit numbers \
+is %d = %d × %d\n", largest, store1, store2);
 	return(0);
 }
