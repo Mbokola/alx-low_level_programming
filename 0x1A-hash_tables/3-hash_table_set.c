@@ -13,25 +13,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node = NULL, *ptr = NULL;
 	unsigned  long int index;
 
-	if (!key || !ht || !strlen(key))
+	if (!key || !ht || !value)
 		return (0);
 	index = hash_djb2((const unsigned char *)key) % ht->size;
 	node = malloc(sizeof(hash_node_t));
 	if (!node)
 		return (0);
 	node->key = strdup((char *)key);
-	if (!node->key)
-	{
-		free(node);
-		return (0);
-	}
 	node->value = strdup((char *)value);
-	if (!node->value)
-	{
-		free(node);
-		free(node->key);
-		return (0);
-	}
 	ptr = ht->array[index];
 	if (!ptr)
 	{
