@@ -11,19 +11,16 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *node = NULL, *ptr = NULL;
-	char *k = (char *)key;
-	const unsigned char *k2 = (const unsigned char *)key;
-	char *val = (char *)value;
 	unsigned  long int index;
 
-	if (!key || !ht || !strcmp(key, "") || !value)
+	if (!key || !ht)
 		return (0);
-	index = hash_djb2(k2) % ht->size;
+	index = hash_djb2((const unsigned char*)key) % ht->size;
 	node = malloc(sizeof(hash_node_t));
 	if (!node)
 		return (0);
-	node->key = strdup(k);
-	node->value = strdup(val);
+	node->key = strdup((char *)key);
+	node->value = strdup((char *)value);
 	ptr = ht->array[index];
 	if (!ptr)
 	{
