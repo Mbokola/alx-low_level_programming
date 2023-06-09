@@ -17,7 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned  long int index;
 
 	if (!key)
-			return (0);
+		return (0);
 	index = hash_djb2(k2) % ht->size;
 	node = malloc(sizeof(hash_node_t));
 	if (!node)
@@ -32,8 +32,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-			node->next = ptr;
-			ht->array[index] = node;
+		node->next = ptr;
+		ht->array[index] = node;
 	}
 	return (1);
 }
