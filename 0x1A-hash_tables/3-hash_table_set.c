@@ -30,10 +30,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		while (ptr->next)
-			ptr = ptr->next;
-		ptr->next = node;
-		node->next = NULL;
+			node->next = ptr;
+			ht->array[index] = node;
 	}
 	return (1);
 }
