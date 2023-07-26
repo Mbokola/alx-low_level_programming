@@ -6,6 +6,7 @@ def island_perimeter(grid):
     """ returns the perimeter of the island described in grid """
     rows = 0
     longest_row = 0
+    shortest_row = -1
     count = 0
     for row in grid:
         rows += 1
@@ -19,4 +20,8 @@ def island_perimeter(grid):
             if value == 1:
                 if index > longest_row:
                     longest_row = index
+                if index < shortest_row or shortest_row < 0:
+                    shortest_row = index
+    if not shortest_row:
+        longest_row += 1
     return 2 * (longest_row + count)
