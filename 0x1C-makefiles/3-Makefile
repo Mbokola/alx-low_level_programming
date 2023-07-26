@@ -6,7 +6,7 @@ RM = rm
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 clean:
-	$(RM) $(filter-out $(wildcard %.c) $(wildcard %.o), $(wildcard *))
+	$(RM) $(NAME) *~
 oclean:
 	$(RM) $(OBJ)
 fclean:
