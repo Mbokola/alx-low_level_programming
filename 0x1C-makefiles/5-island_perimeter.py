@@ -22,9 +22,7 @@ def island_perimeter(grid):
                     longest_row = index
                 if index < shortest_row or shortest_row < 0:
                     shortest_row = index
+    print(longest_row, shortest_row, count)
     if not shortest_row:
         longest_row += 1
-    if longest_row > count and shortest_row:
-        longest_row -= 1
-    print(longest_row, shortest_row, count)
     return 2 * (longest_row + count)
