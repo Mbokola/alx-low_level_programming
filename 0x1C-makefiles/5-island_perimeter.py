@@ -1,27 +1,20 @@
 #!/usr/bin/python3
-""" 5-island_perimeter module """
+"""solution for the
+island perimeter interview
+question"""
 
 
 def island_perimeter(grid):
-    """ returns the perimeter of the island described in grid """
-    rows = 0
-    longest_row = 0
-    shortest_row = -1
-    count = 0
-    for row in grid:
-        rows += 1
-        if 1 not in row:
-            if not count:
-                rows = 0
-            continue
-        if rows > count:
-            count = rows
-        for index, value in enumerate(row):
-            if value == 1:
-                if index > longest_row:
-                    longest_row = index
-                if index < shortest_row or shortest_row < 0:
-                    shortest_row = index
-    if not shortest_row:
-        longest_row += 1
-    return 2 * (longest_row + count)
+    """function that calculates the
+    of a island given the grid
+    """
+    per = 0
+    for i in range(0, len(grid)):
+        for j in range(0, len(grid[i])):
+            if grid[i][j] == 1:
+                per += 4
+                if i > 0 and grid[i - 1][j] == 1:
+                    per -= 2
+                if j > 0 and grid[i][j - 1] == 1:
+                    per -= 2
+    return per
