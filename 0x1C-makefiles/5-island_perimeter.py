@@ -19,6 +19,9 @@ def island_perimeter(grid):
         for index, value in enumerate(row):
             if value == 1:
                 if index > longest_row:
-                    shortest_row = row.index(1)
-                    longest_row = (index + 1) - shortest_row
+                    longest_row = index
+                if index < shortest_row or shortest_row < 0:
+                    shortest_row = index
+    if not shortest_row:
+        longest_row += 1
     return 2 * (longest_row + count)
